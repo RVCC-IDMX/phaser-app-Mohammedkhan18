@@ -86,7 +86,7 @@ export default class TitleScene extends Phaser.Scene {
       setTimeout(() => {
         instructions.style.display = 'none';
         this.scene.start('gameplay');
-      }, 200); // Match with the CSS transition time
+      }, 300); // Match with the CSS transition time
     } else {
       this.scene.start('gameplay');
     }

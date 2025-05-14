@@ -51,7 +51,6 @@ export default class Gameplay extends Phaser.Scene {
       backgroundColor: '#011526',
       wordWrap: { width: 600 }
     });
-
     this.optionButtons = [];  // Store interactive buttons
 
     // Begin the game

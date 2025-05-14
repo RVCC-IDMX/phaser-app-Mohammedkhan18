@@ -100,7 +100,7 @@ document.getElementById('toggle-instructions').addEventListener('click', () => {
     instructions.classList.add('hidden');
     setTimeout(() => {
       instructions.style.display = 'none';
-    }, 500);
+    }, 300);
     button.textContent = 'Show Instructions';
   }
 });
