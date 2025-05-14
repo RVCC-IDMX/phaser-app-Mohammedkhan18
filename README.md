@@ -34,7 +34,7 @@ This will launch the game in your default browser. You can then start making cho
     - [Vecteezy](https://www.vecteezy.com/) – Used under Vecteezy's free use license. (Please verify the specific logo usage rights or attribution required.)
   
 - **Sounds**: The sound effects used in the game were sourced from:
-  - [freesound.org](https://pixabay.com/sound-effects) – Free sound effects like the clicking sound.
+  - [Pixabay.com](https://pixabay.com/sound-effects) – Free sound effects like the clicking sound.
 
 - **Story**: The branching storylines were written specifically for this project.
 
