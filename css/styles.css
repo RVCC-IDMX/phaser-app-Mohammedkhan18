@@ -85,7 +85,7 @@ body {
   
   #instructions.hidden {
     opacity: 0;
-    pointer-events: none;
+    transition: opacity 0.2s ease;
   }
 
   #toggle-instructions {

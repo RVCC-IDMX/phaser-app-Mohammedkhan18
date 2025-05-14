@@ -81,8 +81,11 @@ const config = {
   scene: [TitleScene, Gameplay]
 };
 
-// Create and launch the Phaser game instance
+// Create and export the Phaser game instance
 const game = new Phaser.Game(config);
+
+
+
 
 // Handle the instruction toggle button in the UI
 document.getElementById('toggle-instructions').addEventListener('click', () => {
