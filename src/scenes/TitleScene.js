@@ -1,26 +1,69 @@
+// Import Phaser
 import Phaser from 'phaser';
 
+/* The TitleScene class defines the initial scene where the player sees the game title
+and instructions to start */
 export default class TitleScene extends Phaser.Scene {
   constructor() {
-    super('title');
+    super('title'); // Set the unique key for this scene
   }
 
-
+  // Preload game assets: background logo and button click sound
   preload() {
-    this.load.image('logo', 'assets/logo.png');
+    // Logo image for branding and aesthetic
+    this.load.image('logo', './public/assets/images/logo.png');
+
+    // Click sound for feedback on interaction
+    this.load.audio('click', './assets/click.mp3');
   }
 
   create() {
-    this.add.text(250, 100, 'Into the Forest', { fontSize: '48px', color: '#fff' });
-    this.add.text(200, 200, 'A Choose Your Own Adventure Game',
-      { fontSize: '24px', color: '#fff' });
-    this.add.text(230, 300, 'Press SPACE to Start',
-      { fontSize: '20px', color: '#00f' }).setInteractive().on('pointerdown',
-      () => this.startGame());
-    this.add.image(400, 350, 'logo');
+    // Create and store the click sound instance
+    const clickSound = this.sound.add('click');
+
+    // Game title text
+    this.add.text(190, 100, 'Into the Forest', {
+      fontSize: '48px',
+      color: '#011526'
+    });
+
+    // Subtitle text
+    this.add.text(180, 200, 'A Choose Your Own Adventure Game', {
+      fontSize: '24px',
+      color: '#011526'
+    });
+
+    // Start prompt - interactive to allow clicking as well as keyboard input
+    this.add.text(290, 300, 'Press SPACE to Start', {
+      fontSize: '18px',
+      color: '#021E73'
+    }).setInteractive().on('pointerdown', () => {
+      clickSound.play(); // Audio feedback
+      this.startGame();  // Begin the game
+    });
+
+    // Enable spacebar to start the game as well
+    this.input.keyboard.on('keydown-SPACE', () => {
+      clickSound.play();
+      this.startGame();
+    });
+
+    // Add logo at the bottom and scale it to 10% of original size
+    this.add.image(400, 480, 'logo').setScale(0.1);
   }
 
+  // Starts the gameplay scene and hides instructions overlay
   startGame() {
-    this.scene.start('gameplay');
+    const instructions = document.getElementById('instructions');
+
+    // Check if instructions panel exists
+    if (instructions) {
+      instructions.classList.add('hidden'); // Apply transition class
+      setTimeout(() => {
+        instructions.style.display = 'none'; // Hide after animation
+      }, 500); // Match with CSS transition duration
+    }
+
+    this.scene.start('gameplay'); // Switch to GameplayScene
   }
 }

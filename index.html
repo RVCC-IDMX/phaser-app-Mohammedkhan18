@@ -4,23 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Into the Forest: A Choose Your Own Adventure Game</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+  <link rel="stylesheet" href="./css/styles.css" />
+  
 </head>
 <body>
 <div class="container">
+   <!-- Instruction section for the game -->
 <main>
   <div class="title">Into the Forest</div>
-  <section id="game-container"></section> 
+  
+  <section id="instructions">
+    <h2>How to Play</h2>
+    <p>Welcome to <strong>Into the Forest</strong>, a choice-based adventure game built with JavaScript and Phaser.</p>
+    <ul>
+      <li>🌟 <strong>Click</strong> or press <kbd>SPACE</kbd> on the title screen to begin.</li>
+      <li>🧭 At each step, <strong>read the story</strong> and choose from the options shown.</li>
+      <li>✅ Your choices determine your path — some lead to safety, others to danger.</li>
+      <li>🔄 If you reach an ending, click <strong>"Play Again"</strong> to try a different path.</li>
+    </ul>
+    <p>Good luck, adventurer!</p>
+  </section>
+
+ <!-- Toggle button -->
+<button id="toggle-instructions">Show Instructions</button>
+
+<!-- Phaser canvas container --> 
+<div id="game-container"></div>
+
 </main>
+
   <footer>
     <p>Created with <a href="https://phaser.io">Phaser 3</a></p>
   </footer>
 </div>
 
-<!-- Import the main.js file as a module -->
-<script type="module" src="./src/main.js"></script>
 
+
+<!-- Import the main.js file as a module -->
+<script type="module" src="./src/main.js"></script> 
 </body>
 </html>
 
